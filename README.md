@@ -1,1 +1,1 @@
-Vanilla JS calculator
+
