@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh; 
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    color: aliceblue; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.calc-container {
+    border-radius: 25px;
+    height: 620px;
+    width: 450px; 
+    padding-bottom: 10px;
+    background-color: rgb(16, 16, 16);
+    display: flex; 
+    flex-direction: column;
+}
+
+.results-box {
+    border-width: 1px;
+    background-color: rgb(30, 30, 30);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.results-box-text {
+    margin-right: 45px;
+    font-size: 50px;
+}
+
+.button-container {
+    width: 100%;
+    height: 80%;
+    display: flex; 
+    flex-direction: column;
+}
+
+.button-row {
+    height: 20%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.button-row button {
+    height: 75%;
+    width: 73px;
+    color: aliceblue; 
+    border-radius: 50%;
+    cursor: pointer;
+    border-style: none;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.button-other {
+    background-color: gray; 
+}
+
+.button-number { 
+    background-color: rgb(65, 65, 65);
+}
+
+.button-operator {
+    background-color: orange;
+}
+
+.button-number.zero {
+    width: 40%;
+    border-radius: 100rem;
+    text-align: start;
+    padding-left: 27px;
+}
