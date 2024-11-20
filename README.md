@@ -1,1 +1,1 @@
-A simple vanilla JS calculator. 
+Projects I have created for learning Javascript. 
