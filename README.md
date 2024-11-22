@@ -1,1 +1,1 @@
-Projects that I have created for learning Javascript. 
+Projects I completed for learning Javascript. 
