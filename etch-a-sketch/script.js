@@ -1,6 +1,7 @@
 let color, click = false;
 document.addEventListener("DOMContentLoaded", createCanvas(16)); // create 16x16 canvas by default
 
+// Toggle between drawing modes
 document.querySelector("body").addEventListener("click", (event) => {
     if(event.target.tagName != "BUTTON"){
         click = !click; 
@@ -25,6 +26,7 @@ function createCanvas(size){
     
     let dimensions = size*size; 
 
+    // Initialize grid of divs to create the canvas
     for(let i = 0; i < dimensions; i++){
         const newDiv = document.createElement("div");  
         newDiv.addEventListener("mouseover", selectColor);
@@ -33,16 +35,17 @@ function createCanvas(size){
     } 
 }
 
-// Changes color to
+// Changes color of paintbrush
 function selectColor(){
     if(click){
+        // If color was toggled
         if(color) {
             let red = Math.floor(Math.random() * 256);
             let green = Math.floor(Math.random() * 256);
             let blue = Math.floor(Math.random() * 256);
             this.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
         }
-        // If color button was toggled 
+        // If black was toggled
         else
             this.style.backgroundColor = "black";
     }
