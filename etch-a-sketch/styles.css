@@ -1,4 +1,4 @@
-body {
+body{
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -12,6 +12,32 @@ body {
 .size-select{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
 }
 
+.canvas{
+    display: flex; 
+    flex-direction: column;
+    flex-flow: wrap;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    width: 500px;
+    height: 500px;
+    margin: 25px 0px;
+}
+
+.box{
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-radius: 1px;
+    width: 25px;
+    height: 25px;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 500px
+}
