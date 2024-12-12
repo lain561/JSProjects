@@ -15,23 +15,13 @@ body{
 }
 
 .canvas{
-    display: flex; 
-    flex-direction: column;
-    flex-flow: wrap;
+    display: grid; 
     border-style: solid;
     border-color: rgb(255, 255, 255);
     border-radius: 2px;
     width: 500px;
     height: 500px;
     margin: 25px 0px;
-}
-
-.box{
-    border-style: solid;
-    border-color: rgb(255, 255, 255);
-    border-radius: 1px;
-    width: 25px;
-    height: 25px;
 }
 
 .footer{

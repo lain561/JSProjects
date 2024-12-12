@@ -1,16 +1,14 @@
-// Run function with 16 boxes initially to start program
+document.addEventListener("DOMContentLoaded", createCanvas(16));
 
-// Create grid with drawable boxes
-function createGrid(boxes) {
+function createCanvas(size){
+    const canvas = document.querySelector(".canvas");
+    canvas.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    canvas.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-    const container = document.querySelector("canvas"); // retrive sketch container
+    let dimensions = size*size; 
 
-    // For each x by x, dimension
-    for (let i = 0; i < boxes; boxes++) 
-        for (let j = 0; i < boxes; boxes++) {
-            const newDiv = document.createElement("div"); // create grid box 
-            newDiv.classList.add(); // add styling for box 
-            container.appendChild(newDiv); // append box into parent container
-        }
+    for(let i = 0; i < dimensions; dimensions++){
+        const newDiv = document.createElement("div"); 
+        canvas.insertAdjacentElement("beforeend", newDiv);
+    }
 }
-
