@@ -9,18 +9,22 @@ body{
     align-items: center;
 }
 
+h1{
+    display: inline;
+}
+
 .size-select{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    width: 400px;
 }
 
 .canvas{
     display: grid; 
-    border-style: solid;
-    border-color: rgb(255, 255, 255);
-    border-radius: 2px;
-    width: 500px;
-    height: 500px;
+    background-color: aliceblue;
+    width: 600px;
+    height: 600px;
     margin: 25px 0px;
 }
 
@@ -29,5 +33,5 @@ body{
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    width: 500px
+    width: 600px
 }

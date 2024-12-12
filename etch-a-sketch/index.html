@@ -9,14 +9,14 @@
 </head>
 <body class="bg-dark text-white">
     <div class="size-select">
-        <h1>Etch-A-Sketch</h1>
+        <h1>Draw mode: </h1><h1 class="text-success" id="status">Enabled</h1>
     </div>
     <div class="canvas"></div>
     <div class="footer">
-        <button class="btn btn-dark btn-outline-light">Black</button>
-        <button class="btn btn-warning">Random</button>
-        <button class="btn btn-danger">Resize</button>
-        <button class="btn btn-primary">Clear</button>
+        <button class="btn btn-dark btn-outline-light" onclick="color = false;">Black</button>
+        <button class="btn btn-warning" onclick="color = true;">Random</button>
+        <button class="btn btn-danger" onclick="selectSize();">Resize</button>
+        <button class="btn btn-primary" onclick="clearCanvas();">Clear</button>
     </div>
     <script src="script.js"></script>
 </body>
