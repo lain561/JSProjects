@@ -14,13 +14,13 @@ document.querySelector("body").addEventListener("click", (event) => {
         else{
             status.innerHTML = "Disabled";
             status.classList.replace("text-success", "text-danger");
-        }
+        }   
     }
 });
 
 // Create canvas with inputted size
 function createCanvas(size){
-    const canvas = document.querySelector(".canvas");
+    const canvas = document.querySelector(".canvas"); 
     canvas.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     canvas.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     
