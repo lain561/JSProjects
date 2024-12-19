@@ -62,10 +62,6 @@ input{
     color: aliceblue;
 }
 
-.btn{
-    margin-top: 2.5rem;
-}
-
 main{
     display: flex;
     align-items: center;
