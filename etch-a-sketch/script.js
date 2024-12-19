@@ -37,7 +37,7 @@ function createCanvas(size){
 
 // Changes color of paintbrush
 function selectColor(){
-    if(click){
+    if(click){  
         // If color was toggled
         if(color) {
             let red = Math.floor(Math.random() * 256);
