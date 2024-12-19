@@ -1,8 +1,8 @@
 .bg-custom{
+    background-color: #202020;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #202020;
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 2.5rem;
     margin-bottom: 5rem;
 }
 
@@ -38,11 +38,10 @@ form{
 }
 
 .bk-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 30px;
-}
-
-h6, label{
-    font-weight: 200;
 }
 
 label{
@@ -53,13 +52,19 @@ label{
 
 .bk-input{
     background: transparent;
-    border-color: #ffffff69;
-    border-radius: 8px;
+    border-color: rgba(240, 248, 255, 0.406);
+    border-width: 1px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
     width: 500px;
 }
 
 input{
     color: aliceblue;
+}
+
+.btn-md{
+    width: 500px;
 }
 
 main{
