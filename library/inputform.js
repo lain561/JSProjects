@@ -1,11 +1,9 @@
 const myLibrary = [];
 
-const bookTitle = document.getElementById('title');
-const bookAuthor = document.getElementById('author');
-const bookPages = document.getElementById('pages'); 
-const bookRead   = document.getElementById('pages'); 
-
-document.querySelector('.submit').addEventListener('click', addBookToLibrary);
+document.getElementById('submit').addEventListener('submit', (event) => {
+    event.preventDefault(); 
+    alert('hi'); 
+});
 
 function Book(title, author, pages, read){
     this.title = title;
@@ -15,10 +13,13 @@ function Book(title, author, pages, read){
 }
 
 function addBookToLibrary(){
-    const newBook = new Book(bookTitle.value, bookAuthor.value, bookPages.value);
-    myLibrary.push(newBook);
-    console.log(myLibrary[0]); 
-    console.log(myLibrary[0]); 
+    const bookTitle = document.getElementById('title').value;
+    const bookAuthor = document.getElementById('author').value;
+    const bookPages = document.getElementById('pages').value; 
+    const bookRead = document.getElementById('read').checked; 
+
+    const newBook = new Book(bookTitle, bookAuthor, bookPages);
+    console.log(newBook);
 }
 
 

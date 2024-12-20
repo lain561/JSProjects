@@ -27,8 +27,7 @@
     background: transparent;
     width: 600px;
     height: 350px;
-    border-radius: 12px;
-    box-shadow: 0 4px 5px 0 rgba(136, 136, 136, 0.14), 0 1px 10px 0 rgba(174, 174, 174, 0.12), 0 2px 4px -1px rgba(187, 187, 187, 0.3);
+    box-shadow: 0 4px 5px 0 rgba(136, 136, 136, 0.973), 0 1px 10px 0 rgba(174, 174, 174, 0.12), 0 2px 4px -1px rgba(187, 187, 187, 0.3);
 }
 
 form{
