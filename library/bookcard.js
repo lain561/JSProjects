@@ -1,4 +1,3 @@
-const deleteButton = document.querySelector('.bk-trash');
 const readButton = document.querySelector('.bk-check');
 
 readButton.addEventListener('click', () => {
@@ -16,8 +15,4 @@ readButton.addEventListener('click', () => {
         uncheck.style.display = 'inline';
         readButton.title = 'Mark as Read';
     }
-});
-
-deleteButton.addEventListener('click', () => {
-    deleteButton.parentNode.parentNode.remove();
 });
