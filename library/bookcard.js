@@ -1,8 +1,6 @@
 const readButton = document.querySelector('.bk-check');
 
 readButton.addEventListener('click', () => {
-    const uncheck = document.querySelector('.bi-check-circle');
-    const check = document.querySelector('.bi-check-circle-fill'); 
 
     if(check.style.display === 'none'){
         uncheck.style.display = 'none';

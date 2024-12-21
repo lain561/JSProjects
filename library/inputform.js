@@ -49,7 +49,7 @@ function renderBook(){
                 Pages: ${myLibrary[i].pages}
             </h6>
             <div class="bk-menu">
-                <button class="bk-button bk-check" title="Mark as Read" onclick="readStatus(${i});">
+                <button class="bk-button bk-check" title="Mark as Read">
                     <svg xmlns="http://www.w3.org/2000/svg" width="27" height="30" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16" style="display:inline">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
                         <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
@@ -65,9 +65,49 @@ function renderBook(){
                   </svg>
                 </button>
             </div>`;    
+
+
+        const button = bookCard.querySelector('.bk-button');
+        const uncheck = button.querySelector('.bi-check-circle');
+        const check = button.querySelector('.bi-check-circle-fill'); 
+
+        readStatus(button, check, uncheck, false, i);
         
+        bookCard.querySelector('.bk-button').addEventListener('click', () => {
+            readStatus(button, check, uncheck, true, i);
+        });
+
         bookLibrary.appendChild(bookCard);
     }
 }
 
+function readStatus(button, check, uncheck, click, index){
+    if(myLibrary[index].read){
+        if(click){
+            check.style.display = 'none';
+            uncheck.style.display = 'inline';
+            button.title = 'Mark as Unread';
+        }
+        else{
+            uncheck.style.display = 'none';
+            check.style.display = 'inline';
+            button.title = 'Mark as Read';
+        }
+    } 
+    
+    else{
+        if(click){
+            uncheck.style.display = 'none';
+            check.style.display = 'inline';
+            button.title = 'Mark as unread';
+        }
+        else{
+            check.style.display = 'none';
+            uncheck.style.display = 'inline';
+            button.title = 'Mark as Read';
+        }
+        
+    }
 
+    myLibrary[index].read = !myLibrary[index].read;
+}
