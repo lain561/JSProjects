@@ -1,5 +1,4 @@
 .bg-custom{
-   
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,9 +64,10 @@ label{
 main{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 3rem;
     flex-wrap: wrap;
+    margin-left: 5.5rem;
 }
 
 .book{
