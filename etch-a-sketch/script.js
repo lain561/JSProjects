@@ -30,8 +30,7 @@ function createCanvas(size){
     for(let i = 0; i < dimensions; i++){
         const newDiv = document.createElement("div");  
         newDiv.addEventListener("mouseover", selectColor);
-        newDiv.classList.add("box");
-            
+        newDiv.classList.add("box");        
     } 
 }
 
