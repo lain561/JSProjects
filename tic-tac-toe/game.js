@@ -1,8 +1,22 @@
+const game = {
+    "gameBoard": [],
+    "gameResult": false,
+    "playerTurn": 1
+}
+
+const player1 = new Player(1);
+const player2 = new Player(2);
+
 const gameBoard = document.querySelector(".game-tiles"); // container to store the game tiles
-const playerTurn = document.querySelector(".turn"); // displays player 1/2's turn
+const playText = document.querySelector(".turn"); // displays player 1/2's turn
 const restartButton = document.querySelector(".restart"); // button to clear the game board
-restartButton.addEventListener("click", clearGame);
+restartButton.addEventListener("click", clearGame); 
 createTiles(); // create tic-tac-toe grid
+const tiles = document.querySelectorAll(".tile"); //gets list of tiles for the game
+
+function Player(){
+    this.score = 0;
+}
 
 // Creates the 3x3 grid for the game
 function createTiles(){
@@ -16,18 +30,29 @@ function createTiles(){
 
 // Inserts X/O accordingly based on turn
 function insertMove(tile){
-    if (playerTurn.innerHTML === "Player 1's Turn"){
-        tile.innerHTML = "X";
-        playerTurn.innerHTML = "Player 2's Turn";
-    }
-    else if (playerTurn.innerHTML === "Player 2's Turn"){
-        tile.innerHTML = "O";
-        playerTurn.innerHTML = "Player 1's Turn";
+    // If tile has not been used
+    if(tile.innerHTML == ""){
+        // / Player 1's turn
+        if (Game.playerTurn === 1){
+            tile.innerHTML = "X";
+            playText.innerHTML = "Player 2's Turn";
+            Game.playerTurn = 2;
+        }
+        // Player 2's turn
+        else if (Game.playerTurn === 2){
+            tile.innerHTML = "O";
+            playText.innerHTML = "Player 1's Turn";
+            Game.playerTurn = 1;
+        }        
     }
 }
 
-function clearGame(){
-    for(let i = 0; i < 9; i++){
+function clearGame(){   
+    // For each tile in the grid
+    tiles.forEach((tile) => {
+        tile.innerHTML = ""; // clear current game
+    });
 
-    }
+    playText.innerHTML = "Player 1's Turn"; // reset turns
+    Game.playerTurn = 1;
 }
