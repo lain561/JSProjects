@@ -5,11 +5,13 @@ body{
     justify-content: center;
     flex-direction: column;
     overflow-y: hidden;
-    gap: 2rem
+    gap: 2rem; 
+    padding: 2rem;
 }
 
 h1{
     color: aliceblue;
+    margin-top: 2rem;
 }
 
 .game-tiles{
@@ -36,7 +38,13 @@ button{
     font-size: 7rem;
     font-weight: bold;
     color: darkred;
+    transition: ease 0.1s;
 }
+
+.tile:hover{
+    transform: scale(1.03);
+}
+
 
 .restart{
     transition: ease 0.2s;

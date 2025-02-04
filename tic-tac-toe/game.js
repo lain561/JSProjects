@@ -1,9 +1,11 @@
-const game = {
+// Object to control flow of game
+const Game = {
     "gameBoard": [],
     "gameResult": false,
     "playerTurn": 1
 }
 
+// Start new game
 const player1 = new Player(1);
 const player2 = new Player(2);
 
@@ -35,13 +37,13 @@ function insertMove(tile){
         // / Player 1's turn
         if (Game.playerTurn === 1){
             tile.innerHTML = "X";
-            playText.innerHTML = "Player 2's Turn";
+            playText.innerHTML = "Player 2's Turn (O)";
             Game.playerTurn = 2;
         }
         // Player 2's turn
         else if (Game.playerTurn === 2){
             tile.innerHTML = "O";
-            playText.innerHTML = "Player 1's Turn";
+            playText.innerHTML = "Player 1's Turn (X)";
             Game.playerTurn = 1;
         }        
     }
@@ -53,6 +55,6 @@ function clearGame(){
         tile.innerHTML = ""; // clear current game
     });
 
-    playText.innerHTML = "Player 1's Turn"; // reset turns
+    playText.innerHTML = "Player 1's Turn (X)"; // reset turns
     Game.playerTurn = 1;
 }
