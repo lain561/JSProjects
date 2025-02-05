@@ -29,13 +29,15 @@ function createCanvas(size){
     // Initialize grid of divs to create the canvas
     for(let i = 0; i < dimensions; i++){
         const newDiv = document.createElement("div");  
-        newDiv.addEventListener("mouseover", selectColor);
+        newDiv.addEventListener("mouseenter", selectColor);
         newDiv.classList.add("box");        
+        canvas.insertAdjacentElement("beforeend", newDiv);
     } 
 }
 
 // Changes color of paintbrush
 function selectColor(){
+    console.log("selectcolor");
     if(click){  
         // If color was toggled
         if(color) {
