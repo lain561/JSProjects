@@ -8,10 +8,15 @@
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
-    <h1 class="turn">Player 1's Turn</h1>
+    <h1 class="game-turn"></h1>
     <div class="game-tiles">
     </div>
-    <button class="restart btn btn-lg btn-dark">Reset</button>
+        <form class="game-controls">
+            <input class="name form-control-lg" type="text" id="player1" placeholder="Player 1's Name">
+            <input class="name form-control-lg" type="text" id="player2" placeholder="Player 2's Name">
+            <button class="start btn btn-lg btn-success">Start</button>
+            <button class="restart btn btn-lg btn-danger">Reset</button>
+        </form>
     </div>
     <script src="game.js"></script>
 </body>

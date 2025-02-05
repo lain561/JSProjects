@@ -10,14 +10,14 @@ const player1 = new Player(1);
 const player2 = new Player(2);
 
 const gameBoard = document.querySelector(".game-tiles"); // container to store the game tiles
-const playText = document.querySelector(".turn"); // displays player 1/2's turn
+const playText = document.querySelector(".game-turn"); // displays player 1/2's turn
 const restartButton = document.querySelector(".restart"); // button to clear the game board
-restartButton.addEventListener("click", clearGame); 
+restartButton.addEventListener("click", (event) => {clearGame(event)}); 
 createTiles(); // create tic-tac-toe grid
 const tiles = document.querySelectorAll(".tile"); //gets list of tiles for the game
 
-function Player(){
-    this.score = 0;
+function Player(name){
+    this.name = name;
 }
 
 // Creates the 3x3 grid for the game
@@ -49,12 +49,12 @@ function insertMove(tile){
     }
 }
 
-function clearGame(){   
+function clearGame(event){   
     // For each tile in the grid
     tiles.forEach((tile) => {
         tile.innerHTML = ""; // clear current game
     });
 
-    playText.innerHTML = "Player 1's Turn"; // reset turns
     Game.playerTurn = 1;
+    event.preventDefault(); // prevent form from submitting
 }

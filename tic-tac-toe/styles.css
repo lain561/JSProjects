@@ -1,17 +1,22 @@
+*, *::before, *::after {box-sizing: border-box;}
+
 body{
-    background-color: darkmagenta;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(79, 79, 167);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     overflow-y: hidden;
     gap: 2rem; 
-    padding: 2rem;
 }
 
 h1{
+    width: 275px;
+    height: 50px;
+    margin: 0;
     color: aliceblue;
-    margin-top: 2rem;
     font-weight: bold;
 }
 
@@ -24,7 +29,7 @@ h1{
     justify-items: center;
 } 
 
-button{
+button, input{
     box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
@@ -46,11 +51,23 @@ button{
     transform: scale(1.03);
 }
 
-
-.restart{
-    transition: ease 0.2s;
+.game-controls{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 635px;
 }
 
-.restart:hover{
+
+.name{
+    width: 100%;
+}
+
+.btn{
+    transition: ease 0.2s;
+    width: 39%;
+}
+
+.btn:hover{
     transform: scale(1.1);
 }
