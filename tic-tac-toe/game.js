@@ -1,6 +1,3 @@
-
-const gameTiles = document.querySelector(".game-tiles"); // container to store the game tiles
-
 const Game = (() => {
     let playerTurn = 1; 
     let gameResult = false; 
@@ -22,11 +19,17 @@ const Game = (() => {
 
     const start = (player1Name, player2Name) => {
         if (player1Name && player2Name){
-            player1 = createPlayer(player1Name, "X" );
+            player1 = createPlayer(player1Name, "X");
             player2 = createPlayer(player2Name, "O");
         }
-        // BEFORE STARTING A NEW GAME, CHECK IF BOARD WAS ALREADY RENDERED
-        gameBoard.renderBoard();   
+        
+        if(!gameBoard.checkBoard()){
+            gameBoard.renderBoard();
+        } else{
+            gameBoard.clearBoard();
+        }
+
+        playText.innerHTML = `${player1.name}'s Turn`;
     };
 
     // Inserts X/O accordingly based on turn
@@ -67,7 +70,7 @@ const Game = (() => {
 const gameBoard = (() => {
     let board = new Array(9); // create board with 9 tiles 
 
-    // FOR TILES REMEMBER TO ADD THE HOVER EVENT LISTENDER 
+    const gameTiles = document.querySelector(".game-tiles"); // container to store the game tiles
 
     // Renders gameboard tiles onto the DOM
     const renderBoard = () => {
@@ -89,6 +92,10 @@ const gameBoard = (() => {
             tile.innerHTML = ""; // clear current game
         });
     };
+    
+    const checkBoard = () => {
+        return gameTiles.innerHTML;
+    };  
 
-    return { renderBoard, clearBoard }; // return function as object 
+    return { renderBoard, clearBoard, checkBoard }; // return function as object 
 })();
