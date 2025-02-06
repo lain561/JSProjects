@@ -5,6 +5,7 @@ const Game = (() => {
     let playerTurn = 1; 
     let gameResult = false; 
 
+    const playText = document.querySelector(".game-turn"); // displays player 1/2's turn
     // Player factory function
     const createPlayer = (name, value) => ({ name, value }); 
     
@@ -23,21 +24,15 @@ const Game = (() => {
         if (player1Name && player2Name){
             player1 = createPlayer(player1Name, "X" );
             player2 = createPlayer(player2Name, "O");
-            console.log(player1);
-            console.log(player2);
         }
-        
-
         // BEFORE STARTING A NEW GAME, CHECK IF BOARD WAS ALREADY RENDERED
         gameBoard.renderBoard();   
     };
 
-    const playText = document.querySelector(".game-turn"); // displays player 1/2's turn
-
     // Inserts X/O accordingly based on turn
     const insertMove = (tile) => {
         // If tile has not been used
-        if(tile.innerHTML == ""){
+        if(!tile.innerHTML){
             // / Player 1's turn
             if (playerTurn === 1){
                 tile.innerHTML = player1.value;
@@ -53,7 +48,20 @@ const Game = (() => {
         }
     }
 
-    return { insertMove, playerTurn }
+    // Button to reset the game board
+    const restartButton = document.querySelector(".restart"); 
+    restartButton.addEventListener("click", (event) => { 
+        gameBoard.clearBoard();
+        playerTurn = 1;
+
+        if(playText.innerHTML){
+            playText.innerHTML = `${player1.name}'s Turn`;
+        }
+
+        event.preventDefault(); // prevent form from submitting
+    }); 
+
+    return { insertMove }
 })(); 
 
 const gameBoard = (() => {
@@ -68,26 +76,19 @@ const gameBoard = (() => {
             tile.classList.add("tile"); // add appropriate styling
             tile.id = `square-${i}`; // assign id for future indexing
             tile.addEventListener("click", () => Game.insertMove(tile)); // create event-listener for player's move
-            gameTiles.appendChild(tile); //insert into grid
+            gameTiles.appendChild(tile); // insert into grid
         }
     };
 
-    return { renderBoard }; // return function as object 
+    // Resets the game board
+    const clearBoard = () => {
+        const tiles = document.querySelectorAll(".tile"); // gets list of tiles for the game
+
+        // For each tile in the grid
+        tiles.forEach((tile) => {
+            tile.innerHTML = ""; // clear current game
+        });
+    };
+
+    return { renderBoard, clearBoard }; // return function as object 
 })();
-
-
-const restartButton = document.querySelector(".restart"); // button to clear the game board
-restartButton.addEventListener("click", (event) => {clearGame(event)}); 
-
-const tiles = document.querySelectorAll(".tile"); //gets list of tiles for the game
-
-// clear gameboard
-function clearGame(event){   
-    // For each tile in the grid
-    tiles.forEach((tile) => {
-        tile.innerHTML = ""; // clear current game
-    });
-
-    Game.playerTurn = 1;
-    event.preventDefault(); // prevent form from submitting
-}
