@@ -77,7 +77,7 @@ const gameBoard = (() => {
         for(let i = 0; i < 9; i++){
             const tile = document.createElement("button"); 
             tile.classList.add("tile"); // add appropriate styling
-            tile.id = `square-${i}`; // assign id for future indexing
+            tile.id = `square${i}`; // assign id for future indexing
             tile.addEventListener("click", () => Game.insertMove(tile)); // create event-listener for player's move
             gameTiles.appendChild(tile); // insert into grid
         }
