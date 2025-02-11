@@ -1,3 +1,5 @@
+"use strict";
+
 const Game = (() => {
     const winCombos = [
         [0,1,2],
@@ -87,14 +89,15 @@ const Game = (() => {
     }
 
     const checkWin = () => {
-        board = gameBoard.getBoard();
+        const board = gameBoard.getBoard();
         console.log(board);
+        
 
         for(let i = 0; i < winCombos.length; i++){
-            combo = winCombos[i];
-            cell1 = board[combo[0]];
-            cell2 = board[combo[1]];
-            cell3 = board[combo[2]];
+            const combo = winCombos[i];
+            const cell1 = board[combo[0]];
+            const cell2 = board[combo[1]];
+            const cell3 = board[combo[2]];
 
             if(cell1 === "" && cell2 === "" && cell3 === ""){
                 continue;
@@ -164,3 +167,4 @@ const gameBoard = (() => {
 
     return { renderBoard, clearBoard, checkBoard, setBoard, getBoard }; // return function as object 
 })();
+
