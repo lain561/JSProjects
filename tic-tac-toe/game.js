@@ -1,5 +1,4 @@
 "use strict";
-
 const Game = (() => {
     const winCombos = [
         [0,1,2],
