@@ -1,5 +1,36 @@
 /* styles.css */
 body {
-    background-color: rebeccapurple;
+    height: 100vh;
+    width: 100vw;
+    background-color: darkslateblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+header{
+    margin-bottom: 2rem;
+}
+
+h1, button{
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1{
+    font-weight: bold;
+}
+
+#content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
   
+img{
+    border-radius: 15px;
+}
